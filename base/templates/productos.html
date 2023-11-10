@@ -1,0 +1,206 @@
+{% extends 'partials/body.html'%}
+
+{% block contenido %}
+
+
+    <!-- Cuerpo (Tabla de 7 columnas y campo de búsqueda) -->
+    <div class="container mt-5">
+        <div class="row mb-4"> <!-- Agregamos un margen inferior (mb-4) a esta fila -->
+            <div class="col-md-12">
+                <h2 class="text-center">Productos</h2>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Buscar producto..." aria-label="Buscar producto..." aria-describedby="button-addon2">
+            </div>
+            <div class="col-md-7">
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-outline-secondary btn-block float-end" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#formularioModal2">Nuevo</button>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Nombre producto</th>
+                    <th class="text-center">Unidad medida</th>
+                    <th class="text-center">Stock mínimo</th>
+                    <th class="text-center">Precio unitario compra</th>
+                    <th class="text-center">Precio unitario venta</th>
+                    <th class="text-center">Edición</th>
+                    <th class="text-center">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí puedes agregar filas de datos de la tabla con botones de edición -->
+                <tr>
+                    <td class="text-center">Cemento</td>
+                    <td class="text-center">Bulto</td>
+                    <td class="text-center">50</td>
+                    <td class="text-center">$22.000</td>
+                    <td class="text-center">$30.000</td>
+                    <td class="text-center"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioModal">Editar</button></td>
+                    <td class="text-center"><button class="btn btn-success btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Activo</button></td>
+                </tr>
+                <tr>
+                    <td class="text-center">Zinc</td>
+                    <td class="text-center">Lamina</td>
+                    <td class="text-center">30</td>
+                    <td class="text-center">$20.000</td>
+                    <td class="text-center">$32.100</td>
+                    <td class="text-center"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioModal">Editar</button></td>
+                    <td class="text-center"><button class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Inactivo</button></td>
+                </tr>
+                <tr>
+                    <td class="text-center">Clavo 1 pulgada</td>
+                    <td class="text-center">Caja</td>
+                    <td class="text-center">20</td>
+                    <td class="text-center">$15.000</td>
+                    <td class="text-center">$22.100</td>
+                    <td class="text-center"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioModal">Editar</button></td>
+                    <td class="text-center"><button class="btn btn-success btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Activo</button></td>
+                </tr>
+                <tr>
+                    <td class="text-center">Tiner</td>
+                    <td class="text-center">Galón</td>
+                    <td class="text-center">100</td>
+                    <td class="text-center">$3.000</td>
+                    <td class="text-center">$4.500</td>
+                    <td class="text-center"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioModal">Editar</button></td>
+                    <td class="text-center"><button class="btn btn-success btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Activo</button></td>
+                </tr>
+                <tr>
+                    <td class="text-center">Lamparas Led 120 vt</td>
+                    <td class="text-center">Unidad</td>
+                    <td class="text-center">20</td>
+                    <td class="text-center">$12.300</td>
+                    <td class="text-center">$22.000</td>
+                    <td class="text-center"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioModal">Editar</button></td>
+                    <td class="text-center"><button class="btn btn-success btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Activo</button></td>
+                </tr>
+                <!-- Agrega más filas según sea necesario -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Formularios (Modal) 1 --> 
+
+    <div class="modal fade" id="formularioModal" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="formularioModalLabel">Editar producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Formulario dentro de la ventana modal -->
+            <form>
+                <div class="mb-3">
+                <label for="campo1" class="form-label">Nombre producto</label>
+                <input type="text" class="form-control" id="campo1" name="campo1">
+                </div>
+                <div class="mb-3">
+                <label for="campo2" class="form-label">Unidad medida producto</label>
+                <input type="text" class="form-control" id="campo2" name="campo2">
+                </div>
+                <div class="mb-3">
+                <label for="campo3" class="form-label">Stock mínimo</label>
+                <input type="text" class="form-control" id="campo3" name="campo3">
+                </div>
+                <div class="mb-3">
+                <label for="campo4" class="form-label">Descripción producto</label>
+                <input type="text" class="form-control" id="campo4" name="campo4">
+                </div>
+                <div class="mb-3">
+                <label for="campo5" class="form-label">Precio unitario compra</label>
+                <input type="text" class="form-control" id="campo5" name="campo5">
+                </div>
+                <div class="mb-3">
+                <label for="campo6" class="form-label">Precio unitario venta</label>
+                <input type="text" class="form-control" id="campo6" name="campo6">
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Formularios (Modal) 2 -->
+
+    <div class="modal fade" id="formularioModal2" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="formularioModalLabel">Nuevo producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Formulario dentro de la ventana modal -->
+            <form>
+                <div class="mb-3">
+                <label for="campo1" class="form-label">Nombre producto</label>
+                <input type="text" class="form-control" id="campo1" name="campo1">
+                </div>
+                <div class="mb-3">
+                <label for="campo2" class="form-label">Unidad medida producto</label>
+                <input type="text" class="form-control" id="campo2" name="campo2">
+                </div>
+                <div class="mb-3">
+                <label for="campo3" class="form-label">Stock mínimo</label>
+                <input type="text" class="form-control" id="campo3" name="campo3">
+                </div>
+                <div class="mb-3">
+                <label for="campo4" class="form-label">Descripción producto</label>
+                <input type="text" class="form-control" id="campo4" name="campo4">
+                </div>
+                <div class="mb-3">
+                <label for="campo5" class="form-label">Precio unitario compra</label>
+                <input type="text" class="form-control" id="campo5" name="campo5">
+                </div>
+                <div class="mb-3">
+                <label for="campo6" class="form-label">Precio unitario venta</label>
+                <input type="text" class="form-control" id="campo6" name="campo6">
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Nuevo producto</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+<!-- Formularios (Modal) 3 -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="formularioModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cambiar estado producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Está seguro de que desea cambiar el estado del producto?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="confirmarCambio">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock contenido %}

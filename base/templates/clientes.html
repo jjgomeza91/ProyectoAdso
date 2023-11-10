@@ -1,0 +1,173 @@
+{% extends 'partials/body.html'%}
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+
+    <!-- Cuerpo (Tabla de 7 columnas y campo de búsqueda) -->
+    <div class="container mt-5">
+        <div class="row mb-4"> <!-- Agregamos un margen inferior (mb-4) a esta fila -->
+            <div class="col-md-12">
+                <h2 class="text-center">Clientes</h2>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Buscar cliente..." aria-label="Buscar cliente..." aria-describedby="button-addon2">
+            </div>
+            <div class="col-md-7">
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-outline-secondary btn-block float-end" type="button" id="button-addon2" a href="{% url 'clientes' %}">Nuevo</button>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Nombre cliente</th>
+                    <th class="text-center">Tipo documento</th>
+                    <th class="text-center">Número documento</th>
+                    <th class="text-center">Teléfono</th>
+                    <th class="text-center">Ciudad</th>
+                    <th class="text-center">Edición</th>
+                    <th class="text-center">Estado</th>
+                </tr>
+            </thead>
+           
+        </table>
+    </div>
+
+    <!-- Formularios (Modal) 1 --> 
+
+    <div class="modal fade" id="formularioModal" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="formularioModalLabel">Editar cliente</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Formulario dentro de la ventana modal -->
+            <form>
+                <div class="mb-3">
+                <label for="campo1" class="form-label">Nombre cliente</label>
+                <input type="text" class="form-control" id="campo1" name="campo1">
+                </div>
+                <div class="mb-3">
+                <label for="campo2" class="form-label">Tipo documento</label>
+                <input type="text" class="form-control" id="campo2" name="campo2">
+                </div>
+                <div class="mb-3">
+                <label for="campo3" class="form-label">Número documento</label>
+                <input type="text" class="form-control" id="campo3" name="campo3">
+                </div>
+                <div class="mb-3">
+                <label for="campo4" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="campo4" name="campo4">
+                </div>
+                <div class="mb-3">
+                <label for="campo5" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="campo5" name="campo5">
+                </div>
+                <div class="mb-3">
+                <label for="campo6" class="form-label">Email</label>
+                <input type="text" class="form-control" id="campo6" name="campo6">
+                </div>
+                <div class="mb-3">
+                <label for="campo7" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="campo7" name="campo7">
+                </div>
+                <div class="mb-3">
+                <label for="campo8" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="campo8" name="campo8">
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Formularios (Modal) 2 -->
+
+    <div class="modal fade" id="formularioModal2" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="formularioModalLabel">Nuevo cliente</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Formulario dentro de la ventana modal -->
+            <form>
+                <div class="mb-3">
+                <label for="campo1" class="form-label">Nombre cliente</label>
+                <input type="text" class="form-control" id="campo1" name="campo1">
+                </div>
+                <div class="mb-3">
+                <label for="campo2" class="form-label">Tipo documento</label>
+                <input type="text" class="form-control" id="campo2" name="campo2">
+                </div>
+                <div class="mb-3">
+                <label for="campo3" class="form-label">Número documento</label>
+                <input type="text" class="form-control" id="campo3" name="campo3">
+                </div>
+                <div class="mb-3">
+                <label for="campo4" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="campo4" name="campo4">
+                </div>
+                <div class="mb-3">
+                <label for="campo5" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="campo5" name="campo5">
+                </div>
+                <div class="mb-3">
+                <label for="campo6" class="form-label">Email</label>
+                <input type="text" class="form-control" id="campo6" name="campo6">
+                </div>
+                <div class="mb-3">
+                <label for="campo7" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="campo7" name="campo7">
+                </div>
+                <div class="mb-3">
+                <label for="campo8" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="campo8" name="campo8">
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Nuevo cliente</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+<!-- Formularios (Modal) 3 -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="formularioModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cambiar estado cliente</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Está seguro de que desea cambiar el estado del cliente?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="confirmarCambio">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+{% endblock contenido %}

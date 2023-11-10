@@ -1,0 +1,139 @@
+{% extends 'partials/body.html'%}
+
+{% block contenido %}
+
+
+    <!-- Cuerpo (Tabla de 7 columnas y campo de búsqueda) -->
+    <div class="container mt-5">
+        <div class="row mb-4"> <!-- Agregamos un margen inferior (mb-4) a esta fila -->
+            <div class="col-md-12">
+                <h2 class="text-center">Bodegas</h2>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Buscar bodega..." aria-label="Buscar bodega..." aria-describedby="button-addon2">
+            </div>
+            <div class="col-md-7">
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-outline-secondary btn-block float-end" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#formularioModal2">Nuevo</button>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Nombre bodega</th>
+                    <th class="text-center">Descripción bodega</th>
+                    <th class="text-center">Edición</th>
+                    <th class="text-center">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí puedes agregar filas de datos de la tabla con botones de edición -->
+                <tr>
+                    <td class="text-center">Principal</td>
+                    <td class="text-center">Bodega donde se guarda la mercancía para la venta</td>
+                    <td class="text-center"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioModal">Editar</button></td>
+                    <td class="text-center"><button class="btn btn-success btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Activo</button></td>
+                </tr>
+                <tr>
+                    <td class="text-center">Secundaria</td>
+                    <td class="text-center">Bodega donde se almacena mercancía</td>
+                    <td class="text-center"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioModal">Editar</button></td>
+                    <td class="text-center"><button class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Inactivo</button></td>
+                </tr>
+                <!-- Agrega más filas según sea necesario -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Formularios (Modal) 1 --> 
+
+    <div class="modal fade" id="formularioModal" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="formularioModalLabel">Editar bodega</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Formulario dentro de la ventana modal -->
+            <form>
+                <div class="mb-3">
+                <label for="campo1" class="form-label">Nombre bodega</label>
+                <input type="text" class="form-control" id="campo1" name="campo1">
+                </div>
+                <div class="mb-3">
+                <label for="campo2" class="form-label">Descripción bodega</label>
+                <input type="text" class="form-control" id="campo2" name="campo2">
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Formularios (Modal) 2 -->
+
+    <div class="modal fade" id="formularioModal2" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="formularioModalLabel">Nueva bodega</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Formulario dentro de la ventana modal -->
+            <form>
+                <div class="mb-3">
+                <label for="campo1" class="form-label">Nombre bodega</label>
+                <input type="text" class="form-control" id="campo1" name="campo1">
+                </div>
+                <div class="mb-3">
+                <label for="campo2" class="form-label">Descripción bodega</label>
+                <input type="text" class="form-control" id="campo2" name="campo2">
+                </div>
+                
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Nueva bodega</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+<!-- Formularios (Modal) 3 -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="formularioModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cambiar estado bodega</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Está seguro de que desea cambiar el estado de la bodega?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="confirmarCambio">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock contenido %}

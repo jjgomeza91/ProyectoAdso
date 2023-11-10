@@ -19,9 +19,31 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
+from base.views import principal
+from base.views import clientes
+from base.views import ventas
+from base.views import devoluciones
+from base.views import bodegas
+from base.views import compras
+from base.views import productos
+from base.views import proveedores
+from base.views import roles
+from base.views import usuarios
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',principal,name="index"),
+    path('clientes/', clientes, name='clientes'),
+    path('ventas/', ventas, name='ventas'),
+    path('devoluciones/', devoluciones, name='devoluciones'),
+    path('bodegas/', bodegas, name='bodegas'),
+    path('compras/', compras, name='compras'),
+    path('productos/', productos, name='productos'),
+    path('proveedores/', proveedores, name='proveedores'),
+    path('roles/', roles, name='roles'),
+    path('usuarios/', usuarios, name='usuarios'),
+
+
 ]
 
 if settings.DEBUG:

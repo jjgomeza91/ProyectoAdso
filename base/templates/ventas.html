@@ -1,0 +1,279 @@
+{% extends 'partials/body.html'%}
+
+{% block contenido %}
+
+
+    <!-- Cuerpo (Tabla de 7 columnas y campo de búsqueda) -->
+    <div class="container mt-5">
+        <div class="row mb-4"> <!-- Agregamos un margen inferior (mb-4) a esta fila -->
+            <div class="col-md-12">
+                <h2 class="text-center">Venta de Productos</h2>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Buscar producto..." aria-label="Buscar producto..." aria-describedby="button-addon2">
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Nombre producto</th>
+                    <th class="text-center">Stock</th>
+                    <th class="text-center">Bodega</th>
+                    <th class="text-center">Ubicación</th>
+                    <th class="text-center">Cantidad</th>
+                    <th class="text-center">Valor unitario venta</th>
+                    <th class="text-center">Subtotal</th>
+                    <th class="text-center">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí puedes agregar filas de datos de la tabla con botones de edición -->
+                <tr>
+                    <td class="text-center">Cemento</td>
+                    <td class="text-center">50</td>
+                    <td class="text-center">Principal</td>
+                    <td class="text-center">F1C12</td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td class="text-center">$36.000</td>
+                    <td class="text-center"><button class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td class="text-center">Zinc</td>
+                    <td class="text-center">50</td>
+                    <td class="text-center">Principal</td>
+                    <td class="text-center">F3C5</td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td class="text-center">$600.000</td>
+                    <td class="text-center"><button class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td class="text-center">Tiner</td>
+                    <td class="text-center">100</td>
+                    <td class="text-center">Principal</td>
+                    <td class="text-center">F5C10</td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td class="text-center">$10.000</td>
+                    <td class="text-center"><button class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td class="text-center">Lampares Led 120 vt</td>
+                    <td class="text-center">100</td>
+                    <td class="text-center">Principal</td>
+                    <td class="text-center">F2C12</td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td class="text-center">$22.000</td>
+                    <td class="text-center"><button class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Eliminar</button></td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">Lampares Led 120 vt</td>
+                    <td class="text-center">100</td>
+                    <td class="text-center">Secundaria</td>
+                    <td class="text-center">F1C1</td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td><input type="text" class="form-control form-control-sm" name="producto1"></td>
+                    <td class="text-center">$22.000</td>
+                    <td class="text-center"><button class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#formularioModal3">Eliminar</button></td>
+                </tr>
+
+                
+                <!-- Agrega más filas según sea necesario -->
+            </tbody>
+        </table>
+    </div>
+
+<!-- Segunda tabla (Subtotal, Descuento, Total) -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4"></div> <!-- Espacio en blanco en la primera columna -->
+
+        <div class="col-md-8">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="text-end" colspan="2">Subtotal</td>
+                        <td class="text-center">$666,000</td> <!-- Reemplaza con el valor correcto -->
+                    </tr>
+                    <tr>
+                        <td class="text-end" colspan="2">Descuento</td>
+                        <td class="text-center">$0</td> <!-- Reemplaza con el valor correcto -->
+                    </tr>
+                    <tr>
+                        <td class="text-end" colspan="2">Total</td>
+                        <td class="text-center">$666,000</td> <!-- Reemplaza con el valor correcto -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-4"></div> <!-- Espacio en blanco en la primera columna -->
+
+        <div class="col-md-8">
+            <div class="text-end">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioModal" style="width: 100px;">Pagar</button>
+                <button class="btn btn-danger ms-2" style="width: 100px;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Formularios (Modal) 1 --> 
+    <div class="modal fade" id="formularioModal" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formularioModalLabel">Información de pago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Columna izquierda para los campos existentes -->
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="campo1" class="form-label">Cliente</label>
+                                        <input type="text" class="form-control" id="campo1" name="campo1">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="campo1" class="form-label">Fecha</label>
+                                        <input type="date" class="form-control" id="campo1" name="campo1">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="campo2" class="form-label">Total a pagar</label>
+                                        <input type="text" class="form-control" id="campo2" name="campo2">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="campo3" class="form-label">Método de pago</label>
+                                        <select class="form-select" id="campo3" name="campo3">
+                                            <option value="efectivo">Efectivo</option>
+                                            <option value="combinado">Combinado</option>
+                                            <option value="credito">Crédito</option>
+                                            <option value="banco">Banco</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Columna derecha para el botón "Crear Cliente" más abajo -->
+                                <form>
+                                    <div class="mb-2"><br></div> <!-- Espacio en blanco -->
+                                    <div class="d-flex justify-content-center mb-3">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioModal2">Crear Cliente</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Procesar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+
+        <!-- Modal -->
+        <!-- Formularios (Modal) 3 -->
+        <div class="modal fade" id="formularioModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Está seguro de que desea eliminar el producto de la compra?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="confirmarCambio">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="formularioModal2" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="formularioModalLabel">Nuevo cliente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                <!-- Formulario dentro de la ventana modal -->
+                <form>
+                    <div class="mb-3">
+                    <label for="campo1" class="form-label">Nombre cliente</label>
+                    <input type="text" class="form-control" id="campo1" name="campo1">
+                    </div>
+                    <div class="mb-3">
+                    <label for="campo2" class="form-label">Tipo documento</label>
+                    <input type="text" class="form-control" id="campo2" name="campo2">
+                    </div>
+                    <div class="mb-3">
+                    <label for="campo3" class="form-label">Número documento</label>
+                    <input type="text" class="form-control" id="campo3" name="campo3">
+                    </div>
+                    <div class="mb-3">
+                    <label for="campo4" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="campo4" name="campo4">
+                    </div>
+                    <div class="mb-3">
+                    <label for="campo5" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="campo5" name="campo5">
+                    </div>
+                    <div class="mb-3">
+                    <label for="campo6" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="campo6" name="campo6">
+                    </div>
+                    <div class="mb-3">
+                    <label for="campo7" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="campo7" name="campo7">
+                    </div>
+                    <div class="mb-3">
+                    <label for="campo8" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="campo8" name="campo8">
+                    </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Nuevo cliente</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    
+
+    <div class="container mt-4 mb-4">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <!-- Contenido adicional o última tabla -->
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}
